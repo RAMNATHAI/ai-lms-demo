@@ -19,9 +19,66 @@
         }
         .page {
             display: none;
+            height: 100vh;
+            overflow-y: auto;
         }
         .page.active {
             display: block;
+        }
+
+        /* Custom scrollbar */
+        .page::-webkit-scrollbar {
+            width: 6px;
+        }
+        .page::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .page::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border-radius: 3px;
+        }
+        .page::-webkit-scrollbar-thumb:hover {
+            background: #a8a8a8;
+        }
+
+        /* Fixed sidebar */
+        .sidebar-container {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100vh;
+            width: 256px;
+            z-index: 10;
+        }
+
+        /* Main content with left margin */
+        .main-content {
+            margin-left: 256px;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .sidebar-container {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+            .sidebar-container.mobile-open {
+                transform: translateX(0);
+            }
+            .main-content {
+                margin-left: 0;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .mobile-menu-btn {
+                display: none;
+            }
         }
         .gradient-header {
             background: linear-gradient(135deg, #1e40af 0%, #3730a3 50%, #581c87 100%);
@@ -40,14 +97,14 @@
 </head>
 <body class="bg-gray-50">
     <div class="flex">
-        <!-- Admin Sidebar -->
-        <div class="w-64 bg-gray-900 min-h-screen">
-            <div class="p-4">
+        <!-- Fixed Admin Sidebar -->
+        <div class="sidebar-container w-64 bg-gray-900">
+            <div class="p-4 h-full flex flex-col">
                 <div class="mb-8">
                     <h2 class="text-white text-xl font-bold">AI LMS Admin</h2>
                     <p class="text-gray-400 text-sm">Administrator Panel</p>
                 </div>
-                <nav class="space-y-2">
+                <nav class="space-y-2 flex-1 overflow-y-auto">
                     <a href="#" class="sidebar-item active flex items-center px-4 py-3 rounded-lg text-white" onclick="showPage('overview')">
                         <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
@@ -112,32 +169,42 @@
         </div>
 
         <!-- Main Content -->
-        <div class="flex-1">
+        <div class="main-content flex-1">
             <!-- Dashboard Overview Page -->
-            <div id="overview" class="page active">
+            <div id="overview" class="page active flex flex-col">
                 <!-- Header -->
-                <div class="gradient-header h-32 relative">
+                <div class="gradient-header h-20 relative flex-shrink-0">
                     <div class="absolute inset-0 bg-black bg-opacity-20"></div>
-                    <div class="relative z-10 p-6">
+                    <div class="relative z-10 px-6 py-4">
                         <div class="flex justify-between items-center">
-                            <div>
-                                <h1 class="text-3xl font-bold text-white">Admin Dashboard</h1>
-                                <p class="text-blue-100">Welcome back, Administrator</p>
+                            <div class="flex items-center">
+                                <!-- Mobile Menu Button -->
+                                <button class="mobile-menu-btn mr-4 text-white" onclick="toggleMobileMenu()">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                                    </svg>
+                                </button>
+                                <div>
+                                    <h1 class="text-2xl font-bold text-white">Admin Dashboard</h1>
+                                    <p class="text-blue-100 text-sm">Welcome back, Administrator</p>
+                                </div>
                             </div>
                             <div class="flex items-center space-x-4">
-                                <button class="bg-white bg-opacity-20 text-white px-4 py-2 rounded-lg hover:bg-opacity-30 transition-all">
+                                <button class="bg-white bg-opacity-20 text-white px-3 py-1.5 rounded-lg hover:bg-opacity-30 transition-all text-sm">
                                     Export Report
                                 </button>
                                 <div class="text-white text-right">
-                                    <div class="text-sm opacity-90">Last Updated</div>
-                                    <div class="font-semibold">Just now</div>
+                                    <div class="text-xs opacity-90">Last Updated</div>
+                                    <div class="text-sm font-semibold">Just now</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="p-6">
+                <!-- Scrollable Content -->
+                <div class="flex-1 overflow-y-auto">
+                    <div class="p-6 space-y-6">
                     <!-- Key Metrics -->
                     <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
                         <div class="stat-card bg-white rounded-xl p-6 shadow-sm border border-gray-100">
@@ -261,17 +328,24 @@
                         </div>
                     </div>
                 </div>
+                    </div>
+                </div>
             </div>
 
             <!-- User Management Page -->
-            <div id="users" class="page">
-                <div class="p-6">
-                    <div class="flex justify-between items-center mb-6">
-                        <h1 class="text-3xl font-bold text-gray-900">User Management</h1>
-                        <button onclick="showAddUserModal()" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+            <div id="users" class="page flex flex-col">
+                <!-- Header -->
+                <div class="bg-white border-b border-gray-200 px-6 py-4 flex-shrink-0">
+                    <div class="flex justify-between items-center">
+                        <h1 class="text-2xl font-bold text-gray-900">User Management</h1>
+                        <button onclick="showAddUserModal()" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm">
                             Add New User
                         </button>
                     </div>
+                </div>
+
+                <!-- Scrollable Content -->
+                <div class="flex-1 overflow-y-auto p-6 space-y-6">
 
                     <!-- User Stats -->
                     <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
@@ -413,17 +487,23 @@
                         </div>
                     </div>
                 </div>
+                </div>
             </div>
 
             <!-- Course Management Page -->
-            <div id="courses" class="page">
-                <div class="p-6">
-                    <div class="flex justify-between items-center mb-6">
-                        <h1 class="text-3xl font-bold text-gray-900">Course Management</h1>
-                        <button onclick="showAddCourseModal()" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+            <div id="courses" class="page flex flex-col">
+                <!-- Header -->
+                <div class="bg-white border-b border-gray-200 px-6 py-4 flex-shrink-0">
+                    <div class="flex justify-between items-center">
+                        <h1 class="text-2xl font-bold text-gray-900">Course Management</h1>
+                        <button onclick="showAddCourseModal()" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm">
                             Create New Course
                         </button>
                     </div>
+                </div>
+
+                <!-- Scrollable Content -->
+                <div class="flex-1 overflow-y-auto p-6 space-y-6">
 
                     <!-- Course Stats -->
                     <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
@@ -544,12 +624,18 @@
                         </div>
                     </div>
                 </div>
+                </div>
             </div>
 
             <!-- Analytics Page -->
-            <div id="analytics" class="page">
-                <div class="p-6">
-                    <h1 class="text-3xl font-bold text-gray-900 mb-6">Analytics & Reports</h1>
+            <div id="analytics" class="page flex flex-col">
+                <!-- Header -->
+                <div class="bg-white border-b border-gray-200 px-6 py-4 flex-shrink-0">
+                    <h1 class="text-2xl font-bold text-gray-900">Analytics & Reports</h1>
+                </div>
+
+                <!-- Scrollable Content -->
+                <div class="flex-1 overflow-y-auto p-6 space-y-6">
 
                     <!-- Analytics Cards -->
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -622,17 +708,23 @@
                         </div>
                     </div>
                 </div>
+                </div>
             </div>
 
             <!-- Content Library Page -->
-            <div id="content" class="page">
-                <div class="p-6">
-                    <div class="flex justify-between items-center mb-6">
-                        <h1 class="text-3xl font-bold text-gray-900">Content Library</h1>
-                        <button onclick="showUploadModal()" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+            <div id="content" class="page flex flex-col">
+                <!-- Header -->
+                <div class="bg-white border-b border-gray-200 px-6 py-4 flex-shrink-0">
+                    <div class="flex justify-between items-center">
+                        <h1 class="text-2xl font-bold text-gray-900">Content Library</h1>
+                        <button onclick="showUploadModal()" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm">
                             Upload Content
                         </button>
                     </div>
+                </div>
+
+                <!-- Scrollable Content -->
+                <div class="flex-1 overflow-y-auto p-6 space-y-6">
 
                     <!-- Content Stats -->
                     <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
@@ -722,12 +814,18 @@
                         </div>
                     </div>
                 </div>
+                </div>
             </div>
 
             <!-- AI Configuration Page -->
-            <div id="ai-settings" class="page">
-                <div class="p-6">
-                    <h1 class="text-3xl font-bold text-gray-900 mb-6">AI Configuration</h1>
+            <div id="ai-settings" class="page flex flex-col">
+                <!-- Header -->
+                <div class="bg-white border-b border-gray-200 px-6 py-4 flex-shrink-0">
+                    <h1 class="text-2xl font-bold text-gray-900">AI Configuration</h1>
+                </div>
+
+                <!-- Scrollable Content -->
+                <div class="flex-1 overflow-y-auto p-6 space-y-6">
 
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                         <!-- AI Model Settings -->
@@ -781,12 +879,18 @@
                         </div>
                     </div>
                 </div>
+                </div>
             </div>
 
             <!-- Notifications Page -->
-            <div id="notifications" class="page">
-                <div class="p-6">
-                    <h1 class="text-3xl font-bold text-gray-900 mb-6">Notifications</h1>
+            <div id="notifications" class="page flex flex-col">
+                <!-- Header -->
+                <div class="bg-white border-b border-gray-200 px-6 py-4 flex-shrink-0">
+                    <h1 class="text-2xl font-bold text-gray-900">Notifications</h1>
+                </div>
+
+                <!-- Scrollable Content -->
+                <div class="flex-1 overflow-y-auto p-6 space-y-6">
 
                     <div class="bg-white rounded-lg shadow-sm border border-gray-100 p-6">
                         <div class="space-y-4">
@@ -818,12 +922,18 @@
                         </div>
                     </div>
                 </div>
+                </div>
             </div>
 
             <!-- Settings Page -->
-            <div id="settings" class="page">
-                <div class="p-6">
-                    <h1 class="text-3xl font-bold text-gray-900 mb-6">System Settings</h1>
+            <div id="settings" class="page flex flex-col">
+                <!-- Header -->
+                <div class="bg-white border-b border-gray-200 px-6 py-4 flex-shrink-0">
+                    <h1 class="text-2xl font-bold text-gray-900">System Settings</h1>
+                </div>
+
+                <!-- Scrollable Content -->
+                <div class="flex-1 overflow-y-auto p-6 space-y-6">
 
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                         <!-- General Settings -->
@@ -872,6 +982,7 @@
                             </div>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
         </div>
@@ -977,6 +1088,24 @@
                 window.location.href = 'index.html';
             }
         }
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const sidebar = document.querySelector('.sidebar-container');
+            sidebar.classList.toggle('mobile-open');
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const sidebar = document.querySelector('.sidebar-container');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+
+            if (window.innerWidth <= 768 &&
+                !sidebar.contains(event.target) &&
+                !menuBtn.contains(event.target)) {
+                sidebar.classList.remove('mobile-open');
+            }
+        });
 
         // Initialize when page loads
         document.addEventListener('DOMContentLoaded', function() {
