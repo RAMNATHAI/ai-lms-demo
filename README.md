@@ -1,6 +1,22 @@
-# AI-Powered Learning Management System Demo
+# 🚀 AI-Powered Learning Management System (LMS)
 
-A modern, interactive demo of an AI-powered Learning Management System built with React, TypeScript, and Tailwind CSS. This frontend-only demo showcases the potential of AI in education with realistic features and beautiful UI/UX.
+A comprehensive, modern Learning Management System with AI integration, featuring both learner and administrator interfaces. Built with HTML5, CSS3, JavaScript, and Tailwind CSS for maximum compatibility and ease of deployment.
+
+## 🌟 Live Demo
+
+**🔗 [View Live Demo](https://ramnathai.github.io/ai-lms-demo/)**
+
+## 📱 Demo Credentials
+
+### Learner Access
+- **Email:** `learner@ailms.com`
+- **Password:** `demo123`
+- **Access:** Full learner dashboard with courses, progress tracking, and AI assistant
+
+### Administrator Access
+- **Email:** `admin@ailms.com`
+- **Password:** `admin123`
+- **Access:** Complete admin panel with user management, analytics, and system configuration
 
 ## 🚀 Features
 
