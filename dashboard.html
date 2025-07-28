@@ -196,6 +196,20 @@
                         My Skills
                     </a>
 
+                    <a href="#" class="sidebar-item flex items-center px-4 py-3 rounded-lg text-gray-300" onclick="showPage('my-profile')">
+                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                        </svg>
+                        My Profile
+                    </a>
+
+                    <a href="#" class="sidebar-item flex items-center px-4 py-3 rounded-lg text-gray-300" onclick="showPage('course-catalog')">
+                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                        </svg>
+                        Course Catalog
+                    </a>
+
                     <a href="#" class="sidebar-item flex items-center px-4 py-3 rounded-lg text-gray-300" onclick="showPage('recommended-courses')">
                         <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
@@ -203,13 +217,7 @@
                         Recommended Courses
                     </a>
 
-                    <a href="#" class="sidebar-item flex items-center px-4 py-3 rounded-lg text-gray-300" onclick="showPage('content-collections')">
-                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"></path>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5a2 2 0 012-2h4a2 2 0 012 2v6H8V5z"></path>
-                        </svg>
-                        Content Collections
-                    </a>
+
 
                     <!-- Logout Button -->
                     <div class="mt-8 pt-4 border-t border-gray-700">
@@ -408,66 +416,161 @@
 
             <!-- Action Center Page -->
             <div id="action-center" class="page">
-                <!-- Upper Section with Illustration -->
-                <div class="bg-gray-100 h-64 flex items-center justify-center">
-                    <div class="text-center">
-                        <div class="w-32 h-32 mx-auto mb-4 relative">
-                            <!-- Person illustration -->
-                            <div class="w-24 h-24 bg-blue-600 rounded-full mx-auto mb-2 flex items-center justify-center">
-                                <div class="w-16 h-16 bg-blue-400 rounded-full flex items-center justify-center">
-                                    <div class="w-8 h-8 bg-white rounded-full"></div>
+                <div class="p-6">
+                    <h1 class="text-3xl font-bold text-gray-900 border-b-2 border-blue-500 pb-2 mb-6">Action Center</h1>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <!-- Pending Actions -->
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                            <h2 class="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                Pending Actions (3)
+                            </h2>
+                            
+                            <div class="space-y-4">
+                                <!-- Survey -->
+                                <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                                    <div class="flex items-center justify-between mb-3">
+                                        <div class="flex items-center space-x-3">
+                                            <div class="w-10 h-10 bg-pink-100 rounded-lg flex items-center justify-center">
+                                                <svg class="w-5 h-5 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <h3 class="font-medium text-gray-900">Employee Satisfaction Survey</h3>
+                                                <p class="text-sm text-gray-600">Q4 2024 • 15 minutes</p>
+                                            </div>
+                                        </div>
+                                        <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full">Due Today</span>
+                                    </div>
+                                    <button class="w-full bg-pink-600 text-white py-2 px-4 rounded-lg hover:bg-pink-700 transition-colors">
+                                        Take Survey
+                                    </button>
+                                </div>
+
+                                <!-- Assessment -->
+                                <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                                    <div class="flex items-center justify-between mb-3">
+                                        <div class="flex items-center space-x-3">
+                                            <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                                                <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <h3 class="font-medium text-gray-900">Digital Intelligence Assessment</h3>
+                                                <p class="text-sm text-gray-600">Module 3 • 30 minutes</p>
+                                            </div>
+                                        </div>
+                                        <span class="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded-full">Due Tomorrow</span>
+                                    </div>
+                                    <button class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">
+                                        Start Assessment
+                                    </button>
+                                </div>
+
+                                <!-- Feedback -->
+                                <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                                    <div class="flex items-center justify-between mb-3">
+                                        <div class="flex items-center space-x-3">
+                                            <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                                                <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <h3 class="font-medium text-gray-900">Course Feedback</h3>
+                                                <p class="text-sm text-gray-600">Leadership Development • 5 minutes</p>
+                                            </div>
+                                        </div>
+                                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Due in 2 days</span>
+                                    </div>
+                                    <button class="w-full bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors">
+                                        Provide Feedback
+                                    </button>
                                 </div>
                             </div>
-                            <!-- Arms -->
-                            <div class="absolute top-8 left-4 w-6 h-1 bg-blue-600 rounded-full transform rotate-45"></div>
-                            <div class="absolute top-8 right-4 w-6 h-1 bg-blue-600 rounded-full transform -rotate-45"></div>
                         </div>
-                        <p class="text-gray-600 text-lg">No Reportees Yet</p>
-                    </div>
-                </div>
 
-                <!-- Lower Section -->
-                <div class="p-6 bg-white">
-                    <h1 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-blue-500 pb-2 inline-block">Action Center</h1>
-                    
-                    <!-- Survey Card -->
-                    <div class="max-w-md">
-                        <div class="bg-pink-500 rounded-lg p-6 text-white relative">
-                            <!-- Status Tag -->
-                            <div class="absolute top-4 right-4 bg-yellow-400 text-black px-2 py-1 rounded-full text-xs font-medium">
-                                1 Pending
-                            </div>
+                        <!-- Recent Activities -->
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                            <h2 class="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                                Recent Activities
+                            </h2>
                             
-                            <!-- Icon -->
-                            <div class="flex justify-center mb-4">
-                                <div class="w-16 h-16 bg-white bg-opacity-20 rounded-lg flex items-center justify-center">
-                                    <div class="grid grid-cols-2 gap-1">
-                                        <div class="w-6 h-6 bg-white bg-opacity-30 rounded flex items-center justify-center">
-                                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                            </svg>
-                                        </div>
-                                        <div class="w-6 h-6 bg-white bg-opacity-30 rounded flex items-center justify-center">
-                                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
-                                            </svg>
-                                        </div>
-                                        <div class="w-6 h-6 bg-white bg-opacity-30 rounded flex items-center justify-center">
-                                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
-                                            </svg>
-                                        </div>
-                                        <div class="w-6 h-6 bg-white bg-opacity-30 rounded"></div>
+                            <div class="space-y-4">
+                                <div class="flex items-start space-x-3 pb-3 border-b border-gray-100">
+                                    <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                        <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex-1">
+                                        <p class="text-sm text-gray-900">Completed <strong>Problem Solving Assessment</strong></p>
+                                        <p class="text-xs text-gray-500">2 hours ago • Score: 92%</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-3 pb-3 border-b border-gray-100">
+                                    <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                                        <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex-1">
+                                        <p class="text-sm text-gray-900">Submitted <strong>Team Collaboration Feedback</strong></p>
+                                        <p class="text-xs text-gray-500">1 day ago</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
+                                        <svg class="w-4 h-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex-1">
+                                        <p class="text-sm text-gray-900">Started <strong>Digital Intelligence Module 3</strong></p>
+                                        <p class="text-xs text-gray-500">3 days ago • Progress: 15%</p>
                                     </div>
                                 </div>
                             </div>
-                            
-                            <!-- Title -->
-                            <h3 class="text-xl font-semibold text-center mb-4">Standalone Survey</h3>
-                            
-                            <!-- Button -->
-                            <button class="w-full bg-blue-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-blue-700 transition-all">
-                                Take Survey
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="mt-6 bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                        <h2 class="text-xl font-semibold text-gray-900 mb-4">Quick Actions</h2>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <button class="bg-gray-50 hover:bg-gray-100 p-4 rounded-lg text-center transition-colors">
+                                <svg class="w-8 h-8 mx-auto mb-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                                </svg>
+                                <p class="text-sm font-medium text-gray-900">Resume Learning</p>
+                            </button>
+                            <button class="bg-gray-50 hover:bg-gray-100 p-4 rounded-lg text-center transition-colors">
+                                <svg class="w-8 h-8 mx-auto mb-2 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                                </svg>
+                                <p class="text-sm font-medium text-gray-900">View Certificates</p>
+                            </button>
+                            <button class="bg-gray-50 hover:bg-gray-100 p-4 rounded-lg text-center transition-colors">
+                                <svg class="w-8 h-8 mx-auto mb-2 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                </svg>
+                                <p class="text-sm font-medium text-gray-900">Team Learning</p>
+                            </button>
+                            <button class="bg-gray-50 hover:bg-gray-100 p-4 rounded-lg text-center transition-colors">
+                                <svg class="w-8 h-8 mx-auto mb-2 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                                </svg>
+                                <p class="text-sm font-medium text-gray-900">View Analytics</p>
                             </button>
                         </div>
                     </div>
@@ -2055,12 +2158,755 @@
                 </div>
             </div>
 
-            <div id="content-collections" class="page">
+
+
+            <!-- Course Catalog Page -->
+            <div id="course-catalog" class="page">
                 <div class="p-6">
-                    <h1 class="text-3xl font-bold text-gray-900 mb-4">Content Collections</h1>
-                    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-                        <p class="text-gray-600">Content Collections interface coming soon...</p>
+                    <h1 class="text-3xl font-bold text-gray-900 border-b-2 border-blue-500 pb-2 mb-6">Course Catalog</h1>
+                    
+                    <!-- Search and Filters -->
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-6">
+                        <div class="grid grid-cols-1 lg:grid-cols-4 gap-4">
+                            <!-- Search -->
+                            <div class="lg:col-span-2">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Search Courses</label>
+                                <div class="relative">
+                                    <input type="text" id="courseSearch" placeholder="Search by title, instructor, or keywords..." 
+                                           class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <svg class="absolute left-3 top-2.5 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            
+                            <!-- Category Filter -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Category</label>
+                                <select id="categoryFilter" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <option value="">All Categories</option>
+                                    <option value="leadership">Leadership</option>
+                                    <option value="technology">Technology</option>
+                                    <option value="soft-skills">Soft Skills</option>
+                                    <option value="business">Business</option>
+                                    <option value="data-science">Data Science</option>
+                                    <option value="design">Design</option>
+                                </select>
+                            </div>
+                            
+                            <!-- Difficulty Filter -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Difficulty</label>
+                                <select id="difficultyFilter" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <option value="">All Levels</option>
+                                    <option value="beginner">Beginner</option>
+                                    <option value="intermediate">Intermediate</option>
+                                    <option value="advanced">Advanced</option>
+                                    <option value="expert">Expert</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <!-- Additional Filters -->
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mt-4">
+                            <!-- Duration Filter -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Duration</label>
+                                <select id="durationFilter" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <option value="">Any Duration</option>
+                                    <option value="0-1">0-1 hour</option>
+                                    <option value="1-3">1-3 hours</option>
+                                    <option value="3-6">3-6 hours</option>
+                                    <option value="6-12">6-12 hours</option>
+                                    <option value="12+">12+ hours</option>
+                                </select>
+                            </div>
+                            
+                            <!-- Rating Filter -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Rating</label>
+                                <select id="ratingFilter" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <option value="">Any Rating</option>
+                                    <option value="4.5+">4.5+ stars</option>
+                                    <option value="4.0+">4.0+ stars</option>
+                                    <option value="3.5+">3.5+ stars</option>
+                                </select>
+                            </div>
+                            
+                            <!-- Language Filter -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Language</label>
+                                <select id="languageFilter" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <option value="">All Languages</option>
+                                    <option value="english">English</option>
+                                    <option value="hindi">Hindi</option>
+                                    <option value="spanish">Spanish</option>
+                                    <option value="french">French</option>
+                                </select>
+                            </div>
+                            
+                            <!-- Price Filter -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Price</label>
+                                <select id="priceFilter" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <option value="">Any Price</option>
+                                    <option value="free">Free</option>
+                                    <option value="paid">Paid</option>
+                                    <option value="0-50">$0-$50</option>
+                                    <option value="50-100">$50-$100</option>
+                                    <option value="100+">$100+</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <!-- Filter Actions -->
+                        <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-200">
+                            <div class="flex items-center space-x-2">
+                                <span class="text-sm text-gray-600">Showing <span id="courseCount">24</span> courses</span>
+                                <button onclick="clearFilters()" class="text-sm text-blue-600 hover:text-blue-800">Clear all filters</button>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <label class="text-sm text-gray-600">Sort by:</label>
+                                <select id="sortFilter" class="px-3 py-1 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <option value="relevance">Relevance</option>
+                                    <option value="popularity">Popularity</option>
+                                    <option value="rating">Rating</option>
+                                    <option value="newest">Newest</option>
+                                    <option value="price-low">Price: Low to High</option>
+                                    <option value="price-high">Price: High to Low</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
+                    
+                    <!-- Course Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="courseGrid">
+                        <!-- Course cards will be populated by JavaScript -->
+                    </div>
+                    
+                    <!-- Load More Button -->
+                    <div class="text-center mt-8">
+                        <button onclick="loadMoreCourses()" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+                            Load More Courses
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- My Profile Page -->
+            <div id="my-profile" class="page">
+                <div class="p-6">
+                    <h1 class="text-3xl font-bold text-gray-900 border-b-2 border-blue-500 pb-2 mb-6">My Profile</h1>
+                    
+                    <!-- Profile Header Card -->
+                    <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl shadow-lg p-6 mb-6 text-white">
+                        <div class="flex items-center space-x-6">
+                            <div class="relative">
+                                <div class="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center text-3xl font-bold backdrop-blur-sm">
+                                    AS
+                                </div>
+                                <div class="absolute -bottom-1 -right-1 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <h2 class="text-2xl font-bold mb-1">Alex Smith</h2>
+                                <p class="text-blue-100 mb-2">Senior Software Engineer</p>
+                                <div class="flex items-center space-x-4 text-sm">
+                                    <span class="flex items-center">
+                                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        </svg>
+                                        San Francisco, CA
+                                    </span>
+                                    <span class="flex items-center">
+                                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3a2 2 0 012-2h4a2 2 0 012 2v4m-6 0h6m-6 0V7a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V9a2 2 0 00-2-2v0"></path>
+                                        </svg>
+                                        Engineering Team
+                                    </span>
+                                    <span class="flex items-center">
+                                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        Joined Jan 2022
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <div class="flex items-center space-x-3">
+                                    <button onclick="showUserSwitcher()" class="bg-white/20 hover:bg-white/30 backdrop-blur-sm px-4 py-2 rounded-lg transition-colors">
+                                        <svg class="w-4 h-4 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
+                                        </svg>
+                                        Switch User
+                                    </button>
+                                    <button class="bg-white/20 hover:bg-white/30 backdrop-blur-sm px-4 py-2 rounded-lg transition-colors">
+                                        <svg class="w-4 h-4 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                                        </svg>
+                                        Edit Profile
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Learner Statistics Overview -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+                        <div class="bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl p-6 text-white shadow-lg">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-blue-100 text-sm font-medium">Total Learning Hours</p>
+                                    <p class="text-3xl font-bold">45</p>
+                                    <p class="text-blue-200 text-xs">+12% this month</p>
+                                </div>
+                                <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gradient-to-br from-green-500 to-green-600 rounded-xl p-6 text-white shadow-lg">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-green-100 text-sm font-medium">Courses Completed</p>
+                                    <p class="text-3xl font-bold">12</p>
+                                    <p class="text-green-200 text-xs">3 this month</p>
+                                </div>
+                                <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl p-6 text-white shadow-lg">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-purple-100 text-sm font-medium">Certificates Earned</p>
+                                    <p class="text-3xl font-bold">3</p>
+                                    <p class="text-purple-200 text-xs">1 this month</p>
+                                </div>
+                                <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl p-6 text-white shadow-lg">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-orange-100 text-sm font-medium">Success Rate</p>
+                                    <p class="text-3xl font-bold">95%</p>
+                                    <p class="text-orange-200 text-xs">+5% improvement</p>
+                                </div>
+                                <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        <!-- Left Column -->
+                        <div class="lg:col-span-2 space-y-6">
+                            
+                            <!-- Current Learning Modules -->
+                            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                                <h3 class="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                                    </svg>
+                                    Current Learning Modules
+                                </h3>
+                                <div class="space-y-4">
+                                    <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                                        <div class="flex items-center justify-between mb-3">
+                                            <div class="flex items-center space-x-3">
+                                                <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
+                                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                                                    </svg>
+                                                </div>
+                                                <div>
+                                                    <h4 class="font-semibold text-gray-900">Digital Intelligence</h4>
+                                                    <p class="text-sm text-gray-600">Advanced Level • 4 modules</p>
+                                                </div>
+                                            </div>
+                                            <div class="text-right">
+                                                <div class="text-lg font-bold text-blue-600">75%</div>
+                                                <div class="text-xs text-gray-500">Complete</div>
+                                            </div>
+                                        </div>
+                                        <div class="w-full bg-gray-200 rounded-full h-2 mb-3">
+                                            <div class="bg-blue-600 h-2 rounded-full" style="width: 75%"></div>
+                                        </div>
+                                        <div class="flex items-center justify-between text-sm">
+                                            <span class="text-gray-600">3 of 4 modules completed</span>
+                                            <span class="text-blue-600 font-medium">Continue Learning</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                                        <div class="flex items-center justify-between mb-3">
+                                            <div class="flex items-center space-x-3">
+                                                <div class="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center">
+                                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                                    </svg>
+                                                </div>
+                                                <div>
+                                                    <h4 class="font-semibold text-gray-900">Emotional Intelligence Mastery</h4>
+                                                    <p class="text-sm text-gray-600">Intermediate Level • 6 modules</p>
+                                                </div>
+                                            </div>
+                                            <div class="text-right">
+                                                <div class="text-lg font-bold text-green-600">40%</div>
+                                                <div class="text-xs text-gray-500">Complete</div>
+                                            </div>
+                                        </div>
+                                        <div class="w-full bg-gray-200 rounded-full h-2 mb-3">
+                                            <div class="bg-green-600 h-2 rounded-full" style="width: 40%"></div>
+                                        </div>
+                                        <div class="flex items-center justify-between text-sm">
+                                            <span class="text-gray-600">2 of 6 modules completed</span>
+                                            <span class="text-green-600 font-medium">Continue Learning</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                                        <div class="flex items-center justify-between mb-3">
+                                            <div class="flex items-center space-x-3">
+                                                <div class="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center">
+                                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                                    </svg>
+                                                </div>
+                                                <div>
+                                                    <h4 class="font-semibold text-gray-900">Leadership Development</h4>
+                                                    <p class="text-sm text-gray-600">Expert Level • 8 modules</p>
+                                                </div>
+                                            </div>
+                                            <div class="text-right">
+                                                <div class="text-lg font-bold text-purple-600">25%</div>
+                                                <div class="text-xs text-gray-500">Complete</div>
+                                            </div>
+                                        </div>
+                                        <div class="w-full bg-gray-200 rounded-full h-2 mb-3">
+                                            <div class="bg-purple-600 h-2 rounded-full" style="width: 25%"></div>
+                                        </div>
+                                        <div class="flex items-center justify-between text-sm">
+                                            <span class="text-gray-600">2 of 8 modules completed</span>
+                                            <span class="text-purple-600 font-medium">Continue Learning</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Current Learning Goals -->
+                            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                                <h3 class="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                                    </svg>
+                                    Current Learning Goals
+                                </h3>
+                                <div class="space-y-4">
+                                    <div class="border border-gray-200 rounded-lg p-4">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <h4 class="font-medium text-gray-900">Complete Leadership Development</h4>
+                                            <span class="text-sm text-blue-600 font-medium">75% Complete</span>
+                                        </div>
+                                        <div class="w-full bg-gray-200 rounded-full h-2">
+                                            <div class="bg-blue-600 h-2 rounded-full" style="width: 75%"></div>
+                                        </div>
+                                        <p class="text-sm text-gray-600 mt-2">Target: Complete by Dec 15, 2024</p>
+                                    </div>
+                                    <div class="border border-gray-200 rounded-lg p-4">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <h4 class="font-medium text-gray-900">Master Digital Intelligence</h4>
+                                            <span class="text-sm text-green-600 font-medium">40% Complete</span>
+                                        </div>
+                                        <div class="w-full bg-gray-200 rounded-full h-2">
+                                            <div class="bg-green-600 h-2 rounded-full" style="width: 40%"></div>
+                                        </div>
+                                        <p class="text-sm text-gray-600 mt-2">Target: Complete by Jan 30, 2025</p>
+                                    </div>
+                                    <button class="w-full border-2 border-dashed border-gray-300 rounded-lg p-4 text-gray-600 hover:border-blue-500 hover:text-blue-600 transition-colors">
+                                        <svg class="w-5 h-5 mx-auto mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                                        </svg>
+                                        Add New Learning Goal
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Team & Social Connections -->
+                            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                                <h3 class="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                    </svg>
+                                    Team & Social Connections
+                                </h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <!-- Team Members -->
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-3">Engineering Team (12 members)</h4>
+                                        <div class="space-y-3">
+                                            <div class="flex items-center space-x-3">
+                                                <div class="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white text-sm font-medium">
+                                                    PM
+                                                </div>
+                                                <div class="flex-1">
+                                                    <p class="text-sm font-medium text-gray-900">Priya Mehta</p>
+                                                    <p class="text-xs text-gray-500">Team Lead • 92% completion</p>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-center space-x-3">
+                                                <div class="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center text-white text-sm font-medium">
+                                                    RK
+                                                </div>
+                                                <div class="flex-1">
+                                                    <p class="text-sm font-medium text-gray-900">Rajesh Kumar</p>
+                                                    <p class="text-xs text-gray-500">Senior Developer • 88% completion</p>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-center space-x-3">
+                                                <div class="w-8 h-8 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center text-white text-sm font-medium">
+                                                    AP
+                                                </div>
+                                                <div class="flex-1">
+                                                    <p class="text-sm font-medium text-gray-900">Ananya Patel</p>
+                                                    <p class="text-xs text-gray-500">Frontend Developer • 65% completion</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="w-full mt-4 bg-gray-50 hover:bg-gray-100 text-gray-700 py-2 px-4 rounded-lg transition-colors text-sm">
+                                            View All Team Members
+                                        </button>
+                                    </div>
+
+                                    <!-- Social Feed Activity -->
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-3">Recent Social Activity</h4>
+                                        <div class="space-y-3">
+                                            <div class="bg-gray-50 rounded-lg p-3">
+                                                <p class="text-sm text-gray-900">"Just completed the Digital Intelligence module! Great insights on AI applications."</p>
+                                                <p class="text-xs text-gray-500 mt-1">2 hours ago • 5 likes</p>
+                                            </div>
+                                            <div class="bg-gray-50 rounded-lg p-3">
+                                                <p class="text-sm text-gray-900">"Team Building Workshop was amazing! Learned so much about collaboration."</p>
+                                                <p class="text-xs text-gray-500 mt-1">1 day ago • 8 likes</p>
+                                            </div>
+                                            <div class="bg-gray-50 rounded-lg p-3">
+                                                <p class="text-sm text-gray-900">"Anyone else working on Emotional Intelligence? Let's discuss strategies!"</p>
+                                                <p class="text-xs text-gray-500 mt-1">3 days ago • 12 likes</p>
+                                            </div>
+                                        </div>
+                                        <button class="w-full mt-4 bg-gray-50 hover:bg-gray-100 text-gray-700 py-2 px-4 rounded-lg transition-colors text-sm">
+                                            View Social Feed
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Recent Activity -->
+                            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                                <h3 class="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    Recent Activity
+                                </h3>
+                                <div class="space-y-4">
+                                    <div class="flex items-start space-x-3 pb-3 border-b border-gray-100">
+                                        <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                            <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </div>
+                                        <div class="flex-1">
+                                            <p class="text-sm text-gray-900">Completed <strong>Problem Solving Fundamentals</strong></p>
+                                            <p class="text-xs text-gray-500">2 hours ago • Score: 92%</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start space-x-3 pb-3 border-b border-gray-100">
+                                        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                                            <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                                            </svg>
+                                        </div>
+                                        <div class="flex-1">
+                                            <p class="text-sm text-gray-900">Started <strong>Emotional Intelligence Mastery</strong></p>
+                                            <p class="text-xs text-gray-500">1 day ago • Progress: 15%</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start space-x-3 pb-3 border-b border-gray-100">
+                                        <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
+                                            <svg class="w-4 h-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                            </svg>
+                                        </div>
+                                        <div class="flex-1">
+                                            <p class="text-sm text-gray-900">Joined <strong>Team Building Workshop</strong> discussion</p>
+                                            <p class="text-xs text-gray-500">3 days ago • 5 comments</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start space-x-3">
+                                        <div class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
+                                            <svg class="w-4 h-4 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                                            </svg>
+                                        </div>
+                                        <div class="flex-1">
+                                            <p class="text-sm text-gray-900">Earned <strong>Digital Intelligence</strong> certificate</p>
+                                            <p class="text-xs text-gray-500">1 week ago • Score: 88%</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Column -->
+                        <div class="space-y-6">
+                            
+                            <!-- Skills Summary -->
+                            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    Skills Summary
+                                </h3>
+                                <div class="space-y-3">
+                                    <div>
+                                        <div class="flex justify-between items-center mb-1">
+                                            <span class="text-sm font-medium text-gray-700">Leadership</span>
+                                            <span class="text-sm text-blue-600 font-medium">Expert</span>
+                                        </div>
+                                        <div class="w-full bg-gray-200 rounded-full h-2">
+                                            <div class="bg-blue-600 h-2 rounded-full" style="width: 90%"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex justify-between items-center mb-1">
+                                            <span class="text-sm font-medium text-gray-700">Functional</span>
+                                            <span class="text-sm text-green-600 font-medium">Expert</span>
+                                        </div>
+                                        <div class="w-full bg-gray-200 rounded-full h-2">
+                                            <div class="bg-green-600 h-2 rounded-full" style="width: 85%"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex justify-between items-center mb-1">
+                                            <span class="text-sm font-medium text-gray-700">Digital</span>
+                                            <span class="text-sm text-purple-600 font-medium">Advanced</span>
+                                        </div>
+                                        <div class="w-full bg-gray-200 rounded-full h-2">
+                                            <div class="bg-purple-600 h-2 rounded-full" style="width: 70%"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex justify-between items-center mb-1">
+                                            <span class="text-sm font-medium text-gray-700">Meta Skills</span>
+                                            <span class="text-sm text-orange-600 font-medium">Intermediate</span>
+                                        </div>
+                                        <div class="w-full bg-gray-200 rounded-full h-2">
+                                            <div class="bg-orange-600 h-2 rounded-full" style="width: 60%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="w-full mt-4 bg-gray-50 hover:bg-gray-100 text-gray-700 py-2 px-4 rounded-lg transition-colors text-sm">
+                                    View Detailed Skills Analysis
+                                </button>
+                            </div>
+
+                            <!-- Achievements & Badges -->
+                            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                                    </svg>
+                                    Achievements
+                                </h3>
+                                <div class="grid grid-cols-3 gap-3">
+                                    <div class="text-center p-3 bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-lg">
+                                        <div class="text-2xl mb-1">🏆</div>
+                                        <div class="text-xs font-medium text-gray-700">Top Learner</div>
+                                    </div>
+                                    <div class="text-center p-3 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg">
+                                        <div class="text-2xl mb-1">🎯</div>
+                                        <div class="text-xs font-medium text-gray-700">Goal Achiever</div>
+                                    </div>
+                                    <div class="text-center p-3 bg-gradient-to-br from-green-50 to-green-100 rounded-lg">
+                                        <div class="text-2xl mb-1">⚡</div>
+                                        <div class="text-xs font-medium text-gray-700">Fast Learner</div>
+                                    </div>
+                                    <div class="text-center p-3 bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg">
+                                        <div class="text-2xl mb-1">👥</div>
+                                        <div class="text-xs font-medium text-gray-700">Team Player</div>
+                                    </div>
+                                    <div class="text-center p-3 bg-gradient-to-br from-red-50 to-red-100 rounded-lg">
+                                        <div class="text-2xl mb-1">🔥</div>
+                                        <div class="text-xs font-medium text-gray-700">Streak Master</div>
+                                    </div>
+                                    <div class="text-center p-3 bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-lg">
+                                        <div class="text-2xl mb-1">💡</div>
+                                        <div class="text-xs font-medium text-gray-700">Innovator</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Learning Streak -->
+                            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"></path>
+                                    </svg>
+                                    Learning Streak
+                                </h3>
+                                <div class="text-center">
+                                    <div class="text-4xl font-bold text-red-600 mb-2">🔥 15</div>
+                                    <p class="text-sm text-gray-600 mb-4">Days in a row!</p>
+                                    <div class="flex justify-center space-x-1 mb-4">
+                                        <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                                        <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                                        <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                                        <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                                        <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                                        <div class="w-3 h-3 bg-red-400 rounded-full"></div>
+                                        <div class="w-3 h-3 bg-gray-300 rounded-full"></div>
+                                    </div>
+                                    <p class="text-xs text-gray-500">Keep it up! 5 more days for the next milestone.</p>
+                                </div>
+                            </div>
+
+                            <!-- Personal Info -->
+                            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    Personal Info
+                                </h3>
+                                <div class="space-y-3 text-sm">
+                                    <div class="flex justify-between">
+                                        <span class="text-gray-600">Email:</span>
+                                        <span class="text-gray-900">alex.smith@company.com</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-gray-600">Employee ID:</span>
+                                        <span class="text-gray-900">EMP-2024-001</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-gray-600">Manager:</span>
+                                        <span class="text-gray-900">Sarah Johnson</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-gray-600">Time Zone:</span>
+                                        <span class="text-gray-900">PST (UTC-8)</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-gray-600">Learning Style:</span>
+                                        <span class="text-gray-900">Visual Learner</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- User Switcher Modal -->
+    <div id="userSwitcherModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-xl shadow-2xl max-w-md w-full p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-xl font-bold text-gray-900">Switch User Profile</h3>
+                    <button onclick="hideUserSwitcher()" class="text-gray-400 hover:text-gray-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <div class="space-y-4">
+                    <div onclick="switchUser('arjun')" class="user-option cursor-pointer border-2 border-gray-200 rounded-lg p-4 hover:border-blue-500 hover:bg-blue-50 transition-colors">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold">
+                                AS
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-gray-900">Arjun Sharma</h4>
+                                <p class="text-sm text-gray-600">Senior Software Engineer</p>
+                                <p class="text-xs text-blue-600">75% completion • 12 courses</p>
+                            </div>
+                            <div class="w-4 h-4 bg-blue-500 rounded-full"></div>
+                        </div>
+                    </div>
+                    
+                    <div onclick="switchUser('priya')" class="user-option cursor-pointer border-2 border-gray-200 rounded-lg p-4 hover:border-green-500 hover:bg-green-50 transition-colors">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center text-white font-bold">
+                                PM
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-gray-900">Priya Mehta</h4>
+                                <p class="text-sm text-gray-600">Engineering Team Lead</p>
+                                <p class="text-xs text-green-600">92% completion • 18 courses</p>
+                            </div>
+                            <div class="w-4 h-4 bg-gray-300 rounded-full"></div>
+                        </div>
+                    </div>
+                    
+                    <div onclick="switchUser('rajesh')" class="user-option cursor-pointer border-2 border-gray-200 rounded-lg p-4 hover:border-purple-500 hover:bg-purple-50 transition-colors">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold">
+                                RK
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-gray-900">Rajesh Kumar</h4>
+                                <p class="text-sm text-gray-600">Senior Developer</p>
+                                <p class="text-xs text-purple-600">88% completion • 15 courses</p>
+                            </div>
+                            <div class="w-4 h-4 bg-gray-300 rounded-full"></div>
+                        </div>
+                    </div>
+                    
+                    <div onclick="switchUser('ananya')" class="user-option cursor-pointer border-2 border-gray-200 rounded-lg p-4 hover:border-orange-500 hover:bg-orange-50 transition-colors">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center text-white font-bold">
+                                AP
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-gray-900">Ananya Patel</h4>
+                                <p class="text-sm text-gray-600">Frontend Developer</p>
+                                <p class="text-xs text-orange-600">65% completion • 8 courses</p>
+                            </div>
+                            <div class="w-4 h-4 bg-gray-300 rounded-full"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6 pt-4 border-t border-gray-200">
+                    <p class="text-xs text-gray-500 text-center">
+                        This is a simulation. Each user has different learning progress and preferences.
+                    </p>
                 </div>
             </div>
         </div>
@@ -2360,6 +3206,606 @@
                 sendMessage();
             }
         }
+
+        // User switching functionality
+        let currentUser = 'arjun';
+        
+        const userData = {
+            arjun: {
+                name: 'Arjun Sharma',
+                title: 'Senior Software Engineer',
+                initials: 'AS',
+                color: 'blue',
+                stats: {
+                    hours: 45,
+                    courses: 12,
+                    certificates: 3,
+                    successRate: 95
+                },
+                progress: 75,
+                modules: [
+                    { name: 'Digital Intelligence', progress: 75, level: 'Advanced', modules: 4 },
+                    { name: 'Emotional Intelligence Mastery', progress: 40, level: 'Intermediate', modules: 6 },
+                    { name: 'Leadership Development', progress: 25, level: 'Expert', modules: 8 }
+                ],
+                skills: {
+                    leadership: 90,
+                    functional: 85,
+                    digital: 70,
+                    meta: 60
+                },
+                streak: 15,
+                team: 'Engineering Team',
+                location: 'Bangalore, India',
+                joined: 'Jan 2022',
+                email: 'arjun.sharma@company.com',
+                employeeId: 'EMP-2024-001',
+                manager: 'Priya Mehta',
+                timezone: 'IST (UTC+5:30)',
+                learningStyle: 'Visual Learner'
+            },
+            priya: {
+                name: 'Priya Mehta',
+                title: 'Engineering Team Lead',
+                initials: 'PM',
+                color: 'green',
+                stats: {
+                    hours: 78,
+                    courses: 18,
+                    certificates: 5,
+                    successRate: 98
+                },
+                progress: 92,
+                modules: [
+                    { name: 'Advanced Leadership', progress: 95, level: 'Expert', modules: 6 },
+                    { name: 'Strategic Management', progress: 88, level: 'Advanced', modules: 8 },
+                    { name: 'Team Building Excellence', progress: 92, level: 'Expert', modules: 5 }
+                ],
+                skills: {
+                    leadership: 95,
+                    functional: 90,
+                    digital: 85,
+                    meta: 88
+                },
+                streak: 28,
+                team: 'Engineering Team',
+                location: 'Mumbai, India',
+                joined: 'Mar 2020',
+                email: 'priya.mehta@company.com',
+                employeeId: 'EMP-2020-003',
+                manager: 'Vikram Singh',
+                timezone: 'IST (UTC+5:30)',
+                learningStyle: 'Kinesthetic Learner'
+            },
+            rajesh: {
+                name: 'Rajesh Kumar',
+                title: 'Senior Developer',
+                initials: 'RK',
+                color: 'purple',
+                stats: {
+                    hours: 62,
+                    courses: 15,
+                    certificates: 4,
+                    successRate: 92
+                },
+                progress: 88,
+                modules: [
+                    { name: 'Advanced Programming', progress: 90, level: 'Expert', modules: 7 },
+                    { name: 'System Architecture', progress: 85, level: 'Advanced', modules: 6 },
+                    { name: 'DevOps Practices', progress: 75, level: 'Intermediate', modules: 5 }
+                ],
+                skills: {
+                    leadership: 75,
+                    functional: 95,
+                    digital: 90,
+                    meta: 70
+                },
+                streak: 21,
+                team: 'Engineering Team',
+                location: 'Hyderabad, India',
+                joined: 'Jun 2021',
+                email: 'rajesh.kumar@company.com',
+                employeeId: 'EMP-2021-007',
+                manager: 'Priya Mehta',
+                timezone: 'IST (UTC+5:30)',
+                learningStyle: 'Auditory Learner'
+            },
+            ananya: {
+                name: 'Ananya Patel',
+                title: 'Frontend Developer',
+                initials: 'AP',
+                color: 'orange',
+                stats: {
+                    hours: 32,
+                    courses: 8,
+                    certificates: 2,
+                    successRate: 85
+                },
+                progress: 65,
+                modules: [
+                    { name: 'Frontend Fundamentals', progress: 80, level: 'Intermediate', modules: 4 },
+                    { name: 'React Development', progress: 60, level: 'Intermediate', modules: 6 },
+                    { name: 'UI/UX Design', progress: 45, level: 'Beginner', modules: 5 }
+                ],
+                skills: {
+                    leadership: 55,
+                    functional: 75,
+                    digital: 80,
+                    meta: 50
+                },
+                streak: 8,
+                team: 'Engineering Team',
+                location: 'Pune, India',
+                joined: 'Sep 2023',
+                email: 'ananya.patel@company.com',
+                employeeId: 'EMP-2023-012',
+                manager: 'Rajesh Kumar',
+                timezone: 'IST (UTC+5:30)',
+                learningStyle: 'Visual Learner'
+            }
+        };
+
+        function showUserSwitcher() {
+            document.getElementById('userSwitcherModal').classList.remove('hidden');
+        }
+
+        function hideUserSwitcher() {
+            document.getElementById('userSwitcherModal').classList.add('hidden');
+        }
+
+        function switchUser(userId) {
+            currentUser = userId;
+            const user = userData[userId];
+            
+            // Update profile header
+            document.querySelector('#my-profile .w-24.h-24').textContent = user.initials;
+            document.querySelector('#my-profile h2').textContent = user.name;
+            document.querySelector('#my-profile p.text-blue-100').textContent = user.title;
+            
+            // Update statistics
+            document.querySelector('#my-profile .bg-gradient-to-br.from-blue-500 .text-3xl').textContent = user.stats.hours;
+            document.querySelector('#my-profile .bg-gradient-to-br.from-green-500 .text-3xl').textContent = user.stats.courses;
+            document.querySelector('#my-profile .bg-gradient-to-br.from-purple-500 .text-3xl').textContent = user.stats.certificates;
+            document.querySelector('#my-profile .bg-gradient-to-br.from-orange-500 .text-3xl').textContent = user.stats.successRate + '%';
+            
+            // Update skills
+            document.querySelector('#my-profile .space-y-3 div:nth-child(1) .bg-blue-600').style.width = user.skills.leadership + '%';
+            document.querySelector('#my-profile .space-y-3 div:nth-child(1) .text-blue-600').textContent = user.skills.leadership >= 90 ? 'Expert' : user.skills.leadership >= 75 ? 'Advanced' : 'Intermediate';
+            
+            document.querySelector('#my-profile .space-y-3 div:nth-child(2) .bg-green-600').style.width = user.skills.functional + '%';
+            document.querySelector('#my-profile .space-y-3 div:nth-child(2) .text-green-600').textContent = user.skills.functional >= 90 ? 'Expert' : user.skills.functional >= 75 ? 'Advanced' : 'Intermediate';
+            
+            document.querySelector('#my-profile .space-y-3 div:nth-child(3) .bg-purple-600').style.width = user.skills.digital + '%';
+            document.querySelector('#my-profile .space-y-3 div:nth-child(3) .text-purple-600').textContent = user.skills.digital >= 90 ? 'Expert' : user.skills.digital >= 75 ? 'Advanced' : 'Intermediate';
+            
+            document.querySelector('#my-profile .space-y-3 div:nth-child(4) .bg-orange-600').style.width = user.skills.meta + '%';
+            document.querySelector('#my-profile .space-y-3 div:nth-child(4) .text-orange-600').textContent = user.skills.meta >= 90 ? 'Expert' : user.skills.meta >= 75 ? 'Advanced' : 'Intermediate';
+            
+            // Update streak
+            document.querySelector('#my-profile .text-4xl.font-bold.text-red-600').textContent = '🔥 ' + user.streak;
+            
+            // Update personal info
+            const personalInfo = document.querySelectorAll('#my-profile .space-y-3.text-sm div');
+            personalInfo[0].querySelector('.text-gray-900').textContent = user.email;
+            personalInfo[1].querySelector('.text-gray-900').textContent = user.employeeId;
+            personalInfo[2].querySelector('.text-gray-900').textContent = user.manager;
+            personalInfo[3].querySelector('.text-gray-900').textContent = user.timezone;
+            personalInfo[4].querySelector('.text-gray-900').textContent = user.learningStyle;
+            
+            // Update current modules
+            const moduleCards = document.querySelectorAll('#my-profile .space-y-4 > div');
+            user.modules.forEach((module, index) => {
+                if (moduleCards[index]) {
+                    moduleCards[index].querySelector('h4').textContent = module.name;
+                    moduleCards[index].querySelector('.text-sm.text-gray-600').textContent = module.level + ' Level • ' + module.modules + ' modules';
+                    moduleCards[index].querySelector('.text-lg.font-bold').textContent = module.progress + '%';
+                    moduleCards[index].querySelector('.bg-blue-600, .bg-green-600, .bg-purple-600').style.width = module.progress + '%';
+                    moduleCards[index].querySelector('.text-gray-600').textContent = Math.floor(module.progress / 25) + ' of ' + module.modules + ' modules completed';
+                }
+            });
+            
+            // Update user switcher indicators
+            document.querySelectorAll('.user-option .w-4.h-4').forEach(indicator => {
+                indicator.className = 'w-4 h-4 bg-gray-300 rounded-full';
+            });
+            document.querySelector(`[onclick="switchUser('${userId}')"] .w-4.h-4`).className = 'w-4 h-4 bg-' + user.color + '-500 rounded-full';
+            
+            hideUserSwitcher();
+            
+            // Show notification
+            showNotification(`Switched to ${user.name}'s profile`);
+        }
+
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 transform transition-all duration-300 translate-x-full';
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.classList.remove('translate-x-full');
+            }, 100);
+            
+            setTimeout(() => {
+                notification.classList.add('translate-x-full');
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+
+        // Course Catalog functionality
+        const courseData = [
+            {
+                id: 1,
+                title: "Advanced Leadership Development",
+                instructor: "Dr. Priya Mehta",
+                category: "leadership",
+                difficulty: "expert",
+                duration: "12+",
+                rating: 4.8,
+                students: 1247,
+                price: 199,
+                language: "english",
+                image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=250&fit=crop",
+                description: "Master advanced leadership strategies for senior management roles.",
+                tags: ["Leadership", "Management", "Strategy"]
+            },
+            {
+                id: 2,
+                title: "Data Science Fundamentals",
+                instructor: "Rajesh Kumar",
+                category: "data-science",
+                difficulty: "beginner",
+                duration: "6-12",
+                rating: 4.6,
+                students: 2156,
+                price: 0,
+                language: "english",
+                image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop",
+                description: "Learn the basics of data science and analytics.",
+                tags: ["Data Science", "Analytics", "Python"]
+            },
+            {
+                id: 3,
+                title: "Digital Marketing Mastery",
+                instructor: "Ananya Patel",
+                category: "business",
+                difficulty: "intermediate",
+                duration: "3-6",
+                rating: 4.7,
+                students: 1893,
+                price: 89,
+                language: "english",
+                image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop",
+                description: "Comprehensive digital marketing strategies for modern businesses.",
+                tags: ["Marketing", "Digital", "SEO"]
+            },
+            {
+                id: 4,
+                title: "UI/UX Design Principles",
+                instructor: "Arjun Sharma",
+                category: "design",
+                difficulty: "intermediate",
+                duration: "6-12",
+                rating: 4.5,
+                students: 1567,
+                price: 149,
+                language: "english",
+                image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=250&fit=crop",
+                description: "Learn modern UI/UX design principles and best practices.",
+                tags: ["Design", "UI/UX", "Figma"]
+            },
+            {
+                id: 5,
+                title: "Python Programming for Beginners",
+                instructor: "Mike Chen",
+                category: "technology",
+                difficulty: "beginner",
+                duration: "6-12",
+                rating: 4.9,
+                students: 3421,
+                price: 0,
+                language: "english",
+                image: "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=400&h=250&fit=crop",
+                description: "Start your programming journey with Python.",
+                tags: ["Python", "Programming", "Coding"]
+            },
+            {
+                id: 6,
+                title: "Emotional Intelligence at Work",
+                instructor: "Sarah Johnson",
+                category: "soft-skills",
+                difficulty: "intermediate",
+                duration: "3-6",
+                rating: 4.4,
+                students: 987,
+                price: 79,
+                language: "english",
+                image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=250&fit=crop",
+                description: "Develop emotional intelligence skills for workplace success.",
+                tags: ["Soft Skills", "EQ", "Communication"]
+            },
+            {
+                id: 7,
+                title: "Machine Learning Basics",
+                instructor: "Dr. Vikram Singh",
+                category: "data-science",
+                difficulty: "advanced",
+                duration: "12+",
+                rating: 4.7,
+                students: 1234,
+                price: 299,
+                language: "english",
+                image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop",
+                description: "Introduction to machine learning algorithms and applications.",
+                tags: ["Machine Learning", "AI", "Python"]
+            },
+            {
+                id: 8,
+                title: "Project Management Professional",
+                instructor: "Lisa Wang",
+                category: "business",
+                difficulty: "advanced",
+                duration: "12+",
+                rating: 4.6,
+                students: 876,
+                price: 249,
+                language: "english",
+                image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop",
+                description: "Comprehensive project management certification course.",
+                tags: ["Project Management", "PMP", "Agile"]
+            },
+            {
+                id: 9,
+                title: "React.js Development",
+                instructor: "Alex Rodriguez",
+                category: "technology",
+                difficulty: "intermediate",
+                duration: "6-12",
+                rating: 4.8,
+                students: 2341,
+                price: 129,
+                language: "english",
+                image: "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=400&h=250&fit=crop",
+                description: "Build modern web applications with React.js.",
+                tags: ["React", "JavaScript", "Web Development"]
+            },
+            {
+                id: 10,
+                title: "Business Strategy & Innovation",
+                instructor: "Prof. David Wilson",
+                category: "business",
+                difficulty: "expert",
+                duration: "12+",
+                rating: 4.9,
+                students: 654,
+                price: 399,
+                language: "english",
+                image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop",
+                description: "Strategic thinking and innovation for business leaders.",
+                tags: ["Strategy", "Innovation", "Business"]
+            },
+            {
+                id: 11,
+                title: "Communication Skills in Hindi",
+                instructor: "Neha Gupta",
+                category: "soft-skills",
+                difficulty: "beginner",
+                duration: "1-3",
+                rating: 4.3,
+                students: 543,
+                price: 49,
+                language: "hindi",
+                image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=250&fit=crop",
+                description: "Improve your communication skills in Hindi.",
+                tags: ["Communication", "Hindi", "Soft Skills"]
+            },
+            {
+                id: 12,
+                title: "DevOps Fundamentals",
+                instructor: "Carlos Martinez",
+                category: "technology",
+                difficulty: "intermediate",
+                duration: "6-12",
+                rating: 4.5,
+                students: 1123,
+                price: 159,
+                language: "english",
+                image: "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=400&h=250&fit=crop",
+                description: "Learn DevOps practices and tools.",
+                tags: ["DevOps", "CI/CD", "Docker"]
+            }
+        ];
+
+        let filteredCourses = [...courseData];
+        let displayedCourses = 8;
+
+        function renderCourseCard(course) {
+            const priceDisplay = course.price === 0 ? 'Free' : `$${course.price}`;
+            const priceClass = course.price === 0 ? 'bg-green-100 text-green-800' : 'bg-blue-100 text-blue-800';
+            
+            return `
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="relative">
+                        <img src="${course.image}" alt="${course.title}" class="w-full h-48 object-cover">
+                        <div class="absolute top-3 right-3">
+                            <span class="${priceClass} px-2 py-1 rounded-full text-xs font-medium">${priceDisplay}</span>
+                        </div>
+                        <div class="absolute top-3 left-3">
+                            <span class="bg-black bg-opacity-50 text-white px-2 py-1 rounded-full text-xs">${course.difficulty}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs text-gray-500 uppercase tracking-wide">${course.category}</span>
+                            <div class="flex items-center space-x-1">
+                                <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                                <span class="text-sm font-medium text-gray-900">${course.rating}</span>
+                                <span class="text-sm text-gray-500">(${course.students})</span>
+                            </div>
+                        </div>
+                        
+                        <h3 class="font-semibold text-gray-900 mb-2 line-clamp-2">${course.title}</h3>
+                        <p class="text-sm text-gray-600 mb-3 line-clamp-2">${course.description}</p>
+                        
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-sm text-gray-500">${course.duration} hours</span>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-1 mb-3">
+                            ${course.tags.map(tag => `<span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">${tag}</span>`).join('')}
+                        </div>
+                        
+                        <button onclick="enrollCourse(${course.id})" class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">
+                            ${course.price === 0 ? 'Enroll Free' : 'Enroll Now'}
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function filterCourses() {
+            const searchTerm = document.getElementById('courseSearch').value.toLowerCase();
+            const category = document.getElementById('categoryFilter').value;
+            const difficulty = document.getElementById('difficultyFilter').value;
+            const duration = document.getElementById('durationFilter').value;
+            const rating = document.getElementById('ratingFilter').value;
+            const language = document.getElementById('languageFilter').value;
+            const price = document.getElementById('priceFilter').value;
+            const sortBy = document.getElementById('sortFilter').value;
+
+            filteredCourses = courseData.filter(course => {
+                const matchesSearch = course.title.toLowerCase().includes(searchTerm) || 
+                                    course.instructor.toLowerCase().includes(searchTerm) ||
+                                    course.description.toLowerCase().includes(searchTerm);
+                const matchesCategory = !category || course.category === category;
+                const matchesDifficulty = !difficulty || course.difficulty === difficulty;
+                const matchesLanguage = !language || course.language === language;
+                
+                let matchesDuration = true;
+                if (duration) {
+                    const [min, max] = duration.split('-').map(Number);
+                    const courseDuration = parseInt(course.duration.replace('+', ''));
+                    if (duration === '12+') {
+                        matchesDuration = courseDuration >= 12;
+                    } else {
+                        matchesDuration = courseDuration >= min && courseDuration <= max;
+                    }
+                }
+                
+                let matchesRating = true;
+                if (rating) {
+                    const minRating = parseFloat(rating.replace('+', ''));
+                    matchesRating = course.rating >= minRating;
+                }
+                
+                let matchesPrice = true;
+                if (price) {
+                    if (price === 'free') {
+                        matchesPrice = course.price === 0;
+                    } else if (price === 'paid') {
+                        matchesPrice = course.price > 0;
+                    } else {
+                        const [min, max] = price.split('-').map(Number);
+                        if (price === '100+') {
+                            matchesPrice = course.price >= 100;
+                        } else {
+                            matchesPrice = course.price >= min && course.price <= max;
+                        }
+                    }
+                }
+                
+                return matchesSearch && matchesCategory && matchesDifficulty && 
+                       matchesDuration && matchesRating && matchesLanguage && matchesPrice;
+            });
+
+            // Sort courses
+            switch(sortBy) {
+                case 'popularity':
+                    filteredCourses.sort((a, b) => b.students - a.students);
+                    break;
+                case 'rating':
+                    filteredCourses.sort((a, b) => b.rating - a.rating);
+                    break;
+                case 'newest':
+                    filteredCourses.sort((a, b) => b.id - a.id);
+                    break;
+                case 'price-low':
+                    filteredCourses.sort((a, b) => a.price - b.price);
+                    break;
+                case 'price-high':
+                    filteredCourses.sort((a, b) => b.price - a.price);
+                    break;
+                default: // relevance
+                    break;
+            }
+
+            displayedCourses = 8;
+            renderCourses();
+        }
+
+        function renderCourses() {
+            const courseGrid = document.getElementById('courseGrid');
+            const courseCount = document.getElementById('courseCount');
+            
+            const coursesToShow = filteredCourses.slice(0, displayedCourses);
+            courseGrid.innerHTML = coursesToShow.map(course => renderCourseCard(course)).join('');
+            courseCount.textContent = filteredCourses.length;
+        }
+
+        function loadMoreCourses() {
+            displayedCourses += 4;
+            renderCourses();
+            
+            if (displayedCourses >= filteredCourses.length) {
+                document.querySelector('button[onclick="loadMoreCourses()"]').style.display = 'none';
+            }
+        }
+
+        function clearFilters() {
+            document.getElementById('courseSearch').value = '';
+            document.getElementById('categoryFilter').value = '';
+            document.getElementById('difficultyFilter').value = '';
+            document.getElementById('durationFilter').value = '';
+            document.getElementById('ratingFilter').value = '';
+            document.getElementById('languageFilter').value = '';
+            document.getElementById('priceFilter').value = '';
+            document.getElementById('sortFilter').value = 'relevance';
+            
+            filteredCourses = [...courseData];
+            displayedCourses = 8;
+            renderCourses();
+            document.querySelector('button[onclick="loadMoreCourses()"]').style.display = 'block';
+        }
+
+        function enrollCourse(courseId) {
+            const course = courseData.find(c => c.id === courseId);
+            showNotification(`Enrolled in "${course.title}" successfully!`);
+        }
+
+        // Initialize course catalog when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add event listeners for filters
+            const filterElements = [
+                'courseSearch', 'categoryFilter', 'difficultyFilter', 'durationFilter',
+                'ratingFilter', 'languageFilter', 'priceFilter', 'sortFilter'
+            ];
+            
+            filterElements.forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.addEventListener('change', filterCourses);
+                    element.addEventListener('input', filterCourses);
+                }
+            });
+            
+            // Initialize course display
+            renderCourses();
+        });
 
         // Logout Function
         function logout() {

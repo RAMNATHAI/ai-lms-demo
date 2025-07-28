@@ -1,24 +1,28 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { 
-  LayoutDashboard, 
-  BookOpen, 
-  Users, 
-  BarChart3, 
-  Bot, 
+import {
+  LayoutDashboard,
+  BookOpen,
+  Users,
+  BarChart3,
+  Bot,
   Settings,
   Sparkles,
   TrendingUp
 } from 'lucide-react';
 
-const Sidebar: React.FC = () => {
+interface SidebarProps {
+  currentPage: string;
+  setCurrentPage: (page: string) => void;
+}
+
+const Sidebar: React.FC<SidebarProps> = ({ currentPage, setCurrentPage }) => {
   const menuItems = [
-    { path: '/', icon: LayoutDashboard, label: 'Dashboard' },
-    { path: '/courses', icon: BookOpen, label: 'Courses' },
-    { path: '/students', icon: Users, label: 'Students' },
-    { path: '/analytics', icon: BarChart3, label: 'Analytics' },
-    { path: '/ai-assistant', icon: Bot, label: 'AI Assistant' },
-    { path: '/settings', icon: Settings, label: 'Settings' },
+    { id: 'dashboard', icon: LayoutDashboard, label: 'Dashboard' },
+    { id: 'courses', icon: BookOpen, label: 'Courses' },
+    { id: 'students', icon: Users, label: 'Students' },
+    { id: 'analytics', icon: BarChart3, label: 'Analytics' },
+    { id: 'ai-assistant', icon: Bot, label: 'AI Assistant' },
+    { id: 'settings', icon: Settings, label: 'Settings' },
   ];
 
   return (
@@ -39,16 +43,16 @@ const Sidebar: React.FC = () => {
       {/* Navigation */}
       <nav className="flex-1 p-4 space-y-2">
         {menuItems.map((item) => (
-          <NavLink
-            key={item.path}
-            to={item.path}
-            className={({ isActive }) =>
-              `sidebar-item ${isActive ? 'active' : ''}`
-            }
+          <button
+            key={item.id}
+            onClick={() => setCurrentPage(item.id)}
+            className={`sidebar-item w-full text-left ${
+              currentPage === item.id ? 'active' : ''
+            }`}
           >
             <item.icon className="w-5 h-5 mr-3" />
             {item.label}
-          </NavLink>
+          </button>
         ))}
       </nav>
 
